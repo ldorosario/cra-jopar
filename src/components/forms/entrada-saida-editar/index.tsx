@@ -149,13 +149,6 @@ const EditarEntradaSaidaComponent: React.FC<TransacaoEntradaSaidaProps> = ({
               data: state.data?.toLocaleDateString("pt-BR"),
               descricao: state.descricaoSelecionado,
             });
-            setState((prev) => ({
-              ...prev,
-              tipoSelecionado: "",
-              descricaoSelecionado: "",
-              valor: null,
-              data: null,
-            }));
             onHide();
           }}
         />
