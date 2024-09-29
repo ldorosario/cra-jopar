@@ -40,6 +40,21 @@ export const TableComponent: React.FC<TableProps> = ({
     }).format(valor);
   };
 
+  function formataItemSelecionado(item: any) {
+    const itemMap = item.map((item: any) => {
+      const dataParts = item.data.split("/");
+      const novaData = new Date(dataParts[2], dataParts[1] - 1, dataParts[0]);
+      return {
+        ...item,
+        data: novaData
+          .toISOString()
+          .replace("T", " ")
+          .replace("Z", " GMT-0300 (Hora padrão de Brasília)"),
+      };
+    });
+    return itemMap;
+  }
+
   return (
     <div style={{ height: "900px" }}>
       <DataTable
@@ -49,8 +64,8 @@ export const TableComponent: React.FC<TableProps> = ({
         style={{ minWidth: "50rem" }}
         size="large"
         selectionMode="single"
-        selection={itemSelecionado}
         onSelectionChange={(e: any) => {
+          console.log(e.value);
           setItemSelecionado(e.value);
           setVisibleDialog(true);
         }}

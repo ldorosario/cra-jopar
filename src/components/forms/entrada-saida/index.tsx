@@ -122,10 +122,10 @@ const NovaEntradaSaidaComponent: React.FC<TransacaoEntradaSaidaProps> = ({
             dateFormat="dd/mm/yy"
             id="date"
             onChange={(e: any) =>
-              setState((prev) => ({ ...prev, data: new Date(e.value) }))
+              setState((prev) => ({ ...prev, data: e.value }))
             }
             showIcon
-            value={state.data ? new Date(state.data) : null}
+            value={state.data}
           />
         </div>
         <br></br>

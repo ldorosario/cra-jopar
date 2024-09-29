@@ -47,7 +47,7 @@ const EditarEntradaSaidaComponent: React.FC<TransacaoEntradaSaidaProps> = ({
       { name: "Saida", code: "Saida" },
     ],
     valor: dados.valor,
-    data: new Date(dados.data),
+    data: dados.data,
     categoriaEntrada: [
       { name: "Receb. à vista", code: "Receb. à vista" },
       { name: "Receb. a prazo", code: "Receb. a prazo" },
@@ -128,11 +128,12 @@ const EditarEntradaSaidaComponent: React.FC<TransacaoEntradaSaidaProps> = ({
           <Calendar
             dateFormat="dd/mm/yy"
             id="date"
-            onChange={(e: any) =>
-              setState((prev) => ({ ...prev, data: new Date(e.value) }))
-            }
+            onChange={(e: any) => {
+              setState((prev) => ({ ...prev, data: e.value }));
+              console.log(e.value);
+            }}
             showIcon
-            value={state.data ? new Date(state.data) : null}
+            value={state.data}
           />
         </div>
         <br></br>
