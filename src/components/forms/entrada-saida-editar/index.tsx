@@ -3,7 +3,6 @@ import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
 import { InputNumber } from "primereact/inputnumber";
 import { Dropdown } from "primereact/dropdown";
-import ApiService from "../../../service/api";
 
 interface Tipo {
   name: string;
@@ -138,6 +137,16 @@ const EditarEntradaSaidaComponent: React.FC<TransacaoEntradaSaidaProps> = ({
         </div>
         <br></br>
 
+        <Button
+          severity="success"
+          type="submit"
+          label={state.tipoSelecionado === "Entrada" ? "Receber" : "Pagar"}
+          onClick={() => {
+            excluirDados(dados.id);
+            onHide();
+          }}
+        />
+        <br></br>
         <br></br>
         <Button
           type="submit"
