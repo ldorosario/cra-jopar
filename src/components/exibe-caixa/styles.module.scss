@@ -1,0 +1,12 @@
+.flex.flex-wrap.justify-content-center {
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .flex.flex-wrap.justify-content-center {
+    flex-direction: column;
+  }
+  .col-4.sm-12 {
+    width: 100%;
+  }
+}

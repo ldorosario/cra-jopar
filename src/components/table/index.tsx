@@ -4,6 +4,7 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { DialogComponent } from "../dialog";
 import EditarEntradaSaidaComponent from "../forms/entrada-saida-editar";
+
 interface Product {
   id: string;
   data: string;
